@@ -36,34 +36,6 @@ test.describe('[Channel]', () => {
 		await sideNav.doOpenChat('general');
 	});
 
-	test.describe('[Search]', () => {
-		test.describe('[SpotlightSearch]', async () => {
-			test('expect go to general', async () => {
-				await sideNav.doOpenChat('general');
-				await expect(mainContent.channelTitle('general')).toContainText('general');
-			});
-
-			test('expect go to the user created channel', async () => {
-				await sideNav.doOpenChat(anyChannelName);
-				await expect(mainContent.channelTitle(anyChannelName)).toContainText(anyChannelName);
-			});
-		});
-
-		test.describe('[SideNav Channel List]', () => {
-			test.beforeAll(async () => {
-				await mainContent.messageInput.click();
-			});
-
-			test('expect go to the general channel', async () => {
-				await sideNav.doOpenChat('general');
-			});
-
-			test('expect go to the user created channel', async () => {
-				await sideNav.doOpenChat(anyChannelName);
-			});
-		});
-	});
-
 	test.describe('[Usage]', () => {
 		test.beforeAll(async () => {
 			await sideNav.doOpenChat(anyChannelName);

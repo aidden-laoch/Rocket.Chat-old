@@ -1,4 +1,4 @@
-import { Page } from '@playwright/test';
+import { Page, Locator } from '@playwright/test';
 
 import { HomeContent, HomeSidebar, HomeFlextab } from './fragments';
 
@@ -17,5 +17,9 @@ export class HomeChannel {
 		this.content = new HomeContent(page);
 		this.sidebar = new HomeSidebar(page);
 		this.tabs = new HomeFlextab(page);
+	}
+
+	get btnModalCancel(): Locator {
+		return this.page.locator('#modal-root .rcx-button--danger.rcx-button');
 	}
 }
