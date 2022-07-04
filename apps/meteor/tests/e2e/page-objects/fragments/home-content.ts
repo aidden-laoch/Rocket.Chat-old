@@ -7,6 +7,14 @@ export class HomeContent {
 		this.page = page;
 	}
 
+	get lastUserMessage(): Locator {
+		return this.page.locator('[data-qa-id=UserMessage]').last();
+	}
+
+	get lastUserMessageNotSequential(): Locator {
+		return this.page.locator('[data-qa-id=UserMessage]:not(.sequential)').last();
+	}
+
 	get inputMessage(): Locator {
 		return this.page.locator('[name="msg"]');
 	}
@@ -19,14 +27,16 @@ export class HomeContent {
 		return this.page.locator('[data-qa="AnnouncementAnnoucementComponent"]');
 	}
 
+	get btnFullProfile(): Locator {
+		return this.page.locator('[data-qa="UserCard"] a');
+	}
+
 	getSystemMessage(text: string): Locator {
 		return this.page.locator(`[data-qa-type="system-message-body"] >> text="${text}"`).last();
 	}
 
-	async doSetInputMessage(input: { text: string; delay?: number }): Promise<void> {
-		await this.inputMessage.click({ clickCount: 3 });
-		await this.page.keyboard.press('Backspace');
-
-		await this.inputMessage.type(input.text, { delay: input.delay ?? 0 });
+	async doSendMessage(text: string): Promise<void> {
+		await this.inputMessage.type(text);
+		await this.page.keyboard.press('Enter');
 	}
 }

@@ -58,4 +58,9 @@ export class HomeSidebar {
 		await this.inputChannelName.type(channelName);
 		await this.page.locator('//*[@id="modal-root"]//button[contains(text(), "Create")]').click();
 	}
+
+	async doOpenProfile(): Promise<void> {
+		await this.page.locator('[data-qa="sidebar-avatar-button"]').click();
+		await this.page.locator('//li[@class="rcx-option"]//div[contains(text(), "My Account")]').click();
+	}
 }

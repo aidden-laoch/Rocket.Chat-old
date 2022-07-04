@@ -27,6 +27,10 @@ export class HomeFlextab {
 		return this.page.locator('//button[contains(text(), "Add users")]');
 	}
 
+	get userInfoUsername(): Locator {
+		return this.page.locator('[data-qa="UserInfoUserName"]');
+	}
+
 	getMember(name: string): Locator {
 		return this.page.locator(`[data-qa="MemberItem-${name}"]`);
 	}
@@ -37,6 +41,10 @@ export class HomeFlextab {
 
 	get btnChannelInfoEdit(): Locator {
 		return this.page.locator('.rcx-button >> text="Edit"');
+	}
+
+	get inputChannelName(): Locator {
+		return this.page.locator('//aside//label[contains(text(), "Name")]/..//input');
 	}
 
 	get inputChannelAnnouncement(): Locator {
