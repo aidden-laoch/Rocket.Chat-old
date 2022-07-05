@@ -1,7 +1,7 @@
 //----- Grid System
 @use 'sass:math';
 
-@import "helpers";
+@import 'helpers';
 
 //----- Extends
 %clearfix::after {
@@ -21,7 +21,7 @@ $grid-spacing: 3%;
 	}
 }
 
-[class^="col-"] {
+[class^='col-'] {
 	float: left;
 
 	-webkit-box-sizing: border-box;

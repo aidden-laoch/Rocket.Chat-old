@@ -26,9 +26,7 @@
 	border-radius: $default-border-radius;
 
 	background-color: $bg-color-darker;
-	box-shadow:
-		0 0 0.125rem 0 rgba($bg-color-dark, 0.08),
-		0 0 0.75rem 0 rgba($bg-color-dark, 0.12);
+	box-shadow: 0 0 0.125rem 0 rgba($bg-color-dark, 0.08), 0 0 0.75rem 0 rgba($bg-color-dark, 0.12);
 
 	font-size: 0.75rem;
 	font-weight: 600;
@@ -45,7 +43,7 @@
 			&::before {
 				position: absolute;
 
-				content: "";
+				content: '';
 
 				border: $tail-size solid $bg-color-darker;
 				@content;

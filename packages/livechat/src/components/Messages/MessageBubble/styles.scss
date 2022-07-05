@@ -12,11 +12,8 @@ $message-bubble-me-link-color: $color-text-lighter;
 $message-bubble-nude-padding: 0;
 $message-bubble-quoted-padding: 12px 12px 12px 0;
 $message-bubble-quoted-indicator-width: 3px;
-$message-bubble-quoted-indicator-margin:
-	(-2 * $message-bubble-quoted-indicator-width)
-	(2 * $message-bubble-quoted-indicator-width)
-	(-2 * $message-bubble-quoted-indicator-width)
-	$message-bubble-quoted-indicator-width;
+$message-bubble-quoted-indicator-margin: (-2 * $message-bubble-quoted-indicator-width) (2 * $message-bubble-quoted-indicator-width)
+	(-2 * $message-bubble-quoted-indicator-width) $message-bubble-quoted-indicator-width;
 $message-bubble-quoted-indicator-border-radius: $default-border-radius;
 $message-bubble-quoted-indicator-color: $color-green;
 
@@ -61,7 +58,7 @@ $message-bubble-quoted-indicator-color: $color-green;
 			width: $message-bubble-quoted-indicator-width;
 			margin: -6px 6px -6px 3px;
 
-			content: "";
+			content: '';
 
 			border-radius: $message-bubble-quoted-indicator-border-radius;
 			background-color: $message-bubble-quoted-indicator-color;

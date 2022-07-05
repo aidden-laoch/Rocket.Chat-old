@@ -10,16 +10,11 @@
 	padding: 16px 0;
 
 	user-select: none;
-	transition:
-		opacity $default-time-animation,
-		visibility $default-time-animation,
-		transform math.div($default-time-animation, 2);
+	transition: opacity $default-time-animation, visibility $default-time-animation, transform math.div($default-time-animation, 2);
 
 	border-radius: 4px;
 	background: $bg-color-white;
-	box-shadow:
-		0 0 2px 0 rgba($bg-color-dark, 0.08),
-		0 0 12px 0 rgba($bg-color-dark, 0.12);
+	box-shadow: 0 0 2px 0 rgba($bg-color-dark, 0.08), 0 0 12px 0 rgba($bg-color-dark, 0.12);
 	align-items: stretch;
 
 	&:empty {
@@ -48,7 +43,7 @@
 
 			margin: 14px 16px;
 
-			content: "";
+			content: '';
 
 			border: 1px solid $bg-color-grey;
 		}
