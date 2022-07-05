@@ -15,10 +15,8 @@ public/livechat/
 public/pdf.worker.min.js
 public/workers/**/*
 imports/client/**/*
-ee/server/services/dist/**
+ee/server/services/**
 !/.mocharc.js
 !/.mocharc.*.js
 !/.scripts/
 !/.storybook/
-!/client/.eslintrc.js
-!/ee/client/.eslintrc.js
