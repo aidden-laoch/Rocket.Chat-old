@@ -2,9 +2,47 @@
 	"extends": ["@rocket.chat/eslint-config"],
 	"overrides": [
 		{
-			"files": ["**/*.spec.js", "**/*.spec.jsx"],
-			"env": {
-				"jest": true
+			"files": ["**/*.ts"],
+			"rules": {
+				"@typescript-eslint/ban-types": "warn",
+				"@typescript-eslint/naming-convention": [
+					"error",
+					{
+						"selector": "default",
+						"format": ["camelCase"],
+						"leadingUnderscore": "allow",
+						"trailingUnderscore": "allow"
+					},
+					{
+						"selector": "variable",
+						"format": ["PascalCase", "camelCase", "UPPER_CASE"],
+						"leadingUnderscore": "allow",
+						"trailingUnderscore": "allow"
+					},
+					{
+						"selector": "typeLike",
+						"format": ["PascalCase"]
+					},
+					{
+						"selector": ["typeProperty"],
+						"format": null
+					},
+					{
+						"selector": [
+							"classProperty",
+							"objectLiteralProperty",
+							"typeProperty",
+							"classMethod",
+							"objectLiteralMethod",
+							"typeMethod",
+							"accessor",
+							"enumMember"
+						],
+						"format": null,
+						"modifiers": ["requiresQuotes"]
+					}
+				],
+				"no-undef": "off"
 			}
 		}
 	],

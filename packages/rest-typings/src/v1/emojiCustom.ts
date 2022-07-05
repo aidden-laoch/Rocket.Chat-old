@@ -8,7 +8,7 @@ const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-type emojiCustomDeleteProps = {
+type EmojiCustomDeleteProps = {
 	emojiId: ICustomEmojiDescriptor['_id'];
 };
 
@@ -23,9 +23,9 @@ const emojiCustomDeletePropsSchema = {
 	additionalProperties: false,
 };
 
-export const isEmojiCustomDelete = ajv.compile<emojiCustomDeleteProps>(emojiCustomDeletePropsSchema);
+export const isEmojiCustomDelete = ajv.compile<EmojiCustomDeleteProps>(emojiCustomDeletePropsSchema);
 
-type emojiCustomList = {
+type EmojiCustomList = {
 	query: string;
 	updatedSince?: string;
 };
@@ -45,7 +45,7 @@ const emojiCustomListSchema = {
 	additionalProperties: false,
 };
 
-export const isEmojiCustomList = ajv.compile<emojiCustomList>(emojiCustomListSchema);
+export const isEmojiCustomList = ajv.compile<EmojiCustomList>(emojiCustomListSchema);
 
 export type EmojiCustomEndpoints = {
 	'/v1/emoji-custom.all': {
@@ -54,7 +54,7 @@ export type EmojiCustomEndpoints = {
 		}>;
 	};
 	'/v1/emoji-custom.list': {
-		GET: (params: emojiCustomList) => {
+		GET: (params: EmojiCustomList) => {
 			emojis: {
 				update: IEmojiCustom[];
 				remove: IEmojiCustom[];
@@ -62,7 +62,7 @@ export type EmojiCustomEndpoints = {
 		};
 	};
 	'/v1/emoji-custom.delete': {
-		POST: (params: emojiCustomDeleteProps) => void;
+		POST: (params: EmojiCustomDeleteProps) => void;
 	};
 	'/v1/emoji-custom.create': {
 		POST: (params: { emoji: ICustomEmojiDescriptor }) => void;

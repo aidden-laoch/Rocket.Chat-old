@@ -3,8 +3,6 @@ import { useSyncExternalStore } from 'use-sync-external-store/shim';
 
 import { Presence, UserPresence } from '../lib/presence';
 
-type Presence = 'online' | 'offline' | 'busy' | 'away' | 'loading';
-
 /**
  * Hook to fetch and subscribe users presence
  *

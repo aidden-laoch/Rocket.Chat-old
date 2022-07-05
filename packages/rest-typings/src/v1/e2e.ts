@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import type { IUser } from '@rocket.chat/core-typings';
 import Ajv from 'ajv';
 
@@ -14,9 +13,11 @@ type E2eSetUserPublicAndPrivateKeysProps = {
 const E2eSetUserPublicAndPrivateKeysSchema = {
 	type: 'object',
 	properties: {
+		// eslint-disable-next-line @typescript-eslint/naming-convention
 		public_key: {
 			type: 'string',
 		},
+		// eslint-disable-next-line @typescript-eslint/naming-convention
 		private_key: {
 			type: 'string',
 		},

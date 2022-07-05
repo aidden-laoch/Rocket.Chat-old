@@ -1,4 +1,14 @@
 {
 	"extends": ["@rocket.chat/eslint-config"],
+	"overrides": [
+		{
+			"files": [
+				"**/*.ts"
+			],
+			"rules": {
+				"no-undef": "off"
+			}
+		}
+	],
 	"ignorePatterns": ["**/dist"]
 }

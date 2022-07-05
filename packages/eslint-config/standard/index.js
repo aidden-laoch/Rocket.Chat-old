@@ -1,6 +1,6 @@
 module.exports = {
 	extends: ['../original/index.js', 'plugin:prettier/recommended', 'plugin:import/typescript'],
-	parser: 'babel-eslint',
+	parser: '@babel/eslint-parser',
 	settings: {
 		'import/resolver': {
 			node: {
@@ -41,19 +41,6 @@ module.exports = {
 				'no-useless-constructor': 'off',
 				'no-use-before-define': 'off',
 				'@typescript-eslint/ban-ts-ignore': 'off',
-				'@typescript-eslint/interface-name-prefix': ['error', 'always'],
-				// The following config should successfully replace @typescript-eslint/interface-name-prefix as it is deprecated on newer versions
-				// '@typescript-eslint/naming-convention': [
-				// 	'error',
-				// 	{
-				// 		selector: 'interface',
-				// 		format: ['PascalCase'],
-				// 		custom: {
-				// 			regex: '^I[A-Z]',
-				// 			match: true,
-				// 		},
-				// 	},
-				// ],
 				'@typescript-eslint/no-dupe-class-members': 'error',
 				'@typescript-eslint/no-explicit-any': 'off',
 				'@typescript-eslint/no-unused-vars': [

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import type { IMessage, IRoom, IUser, RoomAdminFieldsType } from '@rocket.chat/core-typings';
 import Ajv from 'ajv';
 
@@ -124,6 +123,7 @@ const RoomsCreateDiscussionSchema = {
 			type: 'string',
 			nullable: true,
 		},
+		// eslint-disable-next-line @typescript-eslint/naming-convention
 		t_name: {
 			type: 'string',
 			nullable: true,

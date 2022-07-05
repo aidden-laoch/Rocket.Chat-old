@@ -7,14 +7,14 @@ import './defaultActions';
 
 export type QuickActionsEventHandler = (handler: EventHandlerOf<Events, 'change'>) => Function;
 
-export type QuickActionsContext = {
+export type QuickActionsContextValue = {
 	actions: Map<QuickActionsActionConfig['id'], QuickActionsAction>;
 	listen: QuickActionsEventHandler;
 };
 
-export const QuickActionsContext = createContext<QuickActionsContext>({
+export const QuickActionsContext = createContext<QuickActionsContextValue>({
 	actions,
 	listen,
 });
 
-export const useQuickActionsContext = (): QuickActionsContext => useContext(QuickActionsContext);
+export const useQuickActionsContext = (): QuickActionsContextValue => useContext(QuickActionsContext);

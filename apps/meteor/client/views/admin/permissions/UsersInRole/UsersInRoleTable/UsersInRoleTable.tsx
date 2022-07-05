@@ -9,7 +9,7 @@ import { GenericTable, GenericTableHeader, GenericTableHeaderCell, GenericTableB
 import { usePagination } from '../../../../../components/GenericTable/hooks/usePagination';
 import UsersInRoleTableRow from './UsersInRoleTableRow';
 
-type UsersInRoleTable = {
+type UsersInRoleTableProps = {
 	users: IUserInRole[];
 	reload: () => void;
 	roleName: IRole['name'];
@@ -20,7 +20,16 @@ type UsersInRoleTable = {
 	paginationData: ReturnType<typeof usePagination>;
 };
 
-const UsersInRoleTable = ({ users, reload, roleName, roleId, description, total, rid, paginationData }: UsersInRoleTable): ReactElement => {
+const UsersInRoleTable = ({
+	users,
+	reload,
+	roleName,
+	roleId,
+	description,
+	total,
+	rid,
+	paginationData,
+}: UsersInRoleTableProps): ReactElement => {
 	const t = useTranslation();
 	const setModal = useSetModal();
 	const dispatchToastMessage = useToastMessageDispatch();

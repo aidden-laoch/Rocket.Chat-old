@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import Ajv from 'ajv';
 
 const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-export type e2eSetUserPublicAndPrivateKeysParamsPOST = {
+export type E2ESetUserPublicAndPrivateKeysParamsPOST = {
 	public_key: string;
 	private_key: string;
 };
@@ -13,9 +12,11 @@ export type e2eSetUserPublicAndPrivateKeysParamsPOST = {
 const e2eSetUserPublicAndPrivateKeysParamsPOSTSchema = {
 	type: 'object',
 	properties: {
+		// eslint-disable-next-line @typescript-eslint/naming-convention
 		public_key: {
 			type: 'string',
 		},
+		// eslint-disable-next-line @typescript-eslint/naming-convention
 		private_key: {
 			type: 'string',
 		},
@@ -24,6 +25,6 @@ const e2eSetUserPublicAndPrivateKeysParamsPOSTSchema = {
 	required: ['public_key', 'private_key'],
 };
 
-export const ise2eSetUserPublicAndPrivateKeysParamsPOST = ajv.compile<e2eSetUserPublicAndPrivateKeysParamsPOST>(
+export const ise2eSetUserPublicAndPrivateKeysParamsPOST = ajv.compile<E2ESetUserPublicAndPrivateKeysParamsPOST>(
 	e2eSetUserPublicAndPrivateKeysParamsPOSTSchema,
 );

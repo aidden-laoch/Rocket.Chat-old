@@ -19,7 +19,7 @@ import Ajv from 'ajv';
 import type { PaginatedRequest } from '../helpers/PaginatedRequest';
 import type { PaginatedResult } from '../helpers/PaginatedResult';
 
-type booleanString = 'true' | 'false';
+type BooleanString = 'true' | 'false';
 
 const ajv = new Ajv({
 	coerceTypes: true,
@@ -60,8 +60,8 @@ const LivechatRoomOnHoldSchema = {
 export const isLivechatRoomOnHoldProps = ajv.compile<LivechatRoomOnHold>(LivechatRoomOnHoldSchema);
 
 type LivechatDepartmentId = {
-	onlyMyDepartments?: booleanString;
-	includeAgents?: booleanString;
+	onlyMyDepartments?: BooleanString;
+	includeAgents?: BooleanString;
 };
 
 const LivechatDepartmentIdSchema = {
@@ -83,7 +83,7 @@ export const isLivechatDepartmentIdProps = ajv.compile<LivechatDepartmentId>(Liv
 
 type LivechatDepartmentAutocomplete = {
 	selector: string;
-	onlyMyDepartments: booleanString;
+	onlyMyDepartments: BooleanString;
 };
 
 const LivechatDepartmentAutocompleteSchema = {
@@ -332,8 +332,8 @@ export const isLivechatTagsListProps = ajv.compile<LivechatTagsListProps>(Livech
 
 type LivechatDepartmentProps = PaginatedRequest<{
 	text: string;
-	onlyMyDepartments?: booleanString;
-	enabled?: booleanString;
+	onlyMyDepartments?: BooleanString;
+	enabled?: BooleanString;
 	excludeDepartmentId?: string;
 }>;
 
@@ -548,7 +548,7 @@ export const isLivechatUsersManagerPOSTProps = ajv.compile<LivechatUsersManagerP
 
 type LivechatQueueProps = {
 	agentId?: string;
-	includeOfflineAgents?: booleanString;
+	includeOfflineAgents?: BooleanString;
 	departmentId?: string;
 	offset: number;
 	count: number;

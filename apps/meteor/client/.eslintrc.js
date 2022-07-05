@@ -1,7 +1,7 @@
 module.exports = {
 	root: true,
 	extends: ['@rocket.chat/eslint-config/original', 'prettier'],
-	parser: 'babel-eslint',
+	parser: '@babel/eslint-parser',
 	plugins: ['react', 'react-hooks', 'prettier', 'testing-library', 'anti-trojan-source'],
 	rules: {
 		'import/named': 'error',
@@ -60,13 +60,14 @@ module.exports = {
 			parser: '@typescript-eslint/parser',
 			plugins: ['@typescript-eslint', 'react', 'react-hooks', 'prettier'],
 			rules: {
-				'@typescript-eslint/ban-ts-ignore': 'off',
+				'@typescript-eslint/ban-ts-comment': 'warn',
+				'@typescript-eslint/ban-types': 'warn',
 				'@typescript-eslint/explicit-function-return-type': 'warn',
 				// '@typescript-eslint/explicit-module-boundary-types': 'off',
 				'@typescript-eslint/indent': 'off',
-				'@typescript-eslint/interface-name-prefix': ['error', 'always'],
 				'@typescript-eslint/no-extra-parens': 'off',
 				'@typescript-eslint/no-explicit-any': 'off',
+				'@typescript-eslint/no-redeclare': ['error'],
 				'@typescript-eslint/no-unused-vars': [
 					'error',
 					{
@@ -89,7 +90,9 @@ module.exports = {
 				'jsx-quotes': ['error', 'prefer-single'],
 				'new-cap': ['error', { capIsNewExceptions: ['HTML.Comment', 'HTML.Raw', 'HTML.DIV', 'SHA256'] }],
 				'no-extra-parens': 'off',
+				'no-redeclare': 'off',
 				'no-spaced-func': 'off',
+				'no-undef': 'off',
 				'no-unused-vars': 'off',
 				'no-useless-constructor': 'off',
 				'no-use-before-define': 'off',

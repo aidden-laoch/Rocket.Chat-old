@@ -24,14 +24,14 @@ import {
 	useVideoConfPreferences,
 } from '../../../../../../../contexts/VideoConfContext';
 
-type StartDirectCallPopup = {
+type StartDirectCallPopupProps = {
 	room: IRoom;
 	onConfirm: () => void;
 	loading: boolean;
 };
 
 const StartDirectCallPopup = forwardRef(function StartDirectCallPopup(
-	{ room, onConfirm, loading }: StartDirectCallPopup,
+	{ room, onConfirm, loading }: StartDirectCallPopupProps,
 	ref: Ref<HTMLDivElement>,
 ): ReactElement {
 	const t = useTranslation();

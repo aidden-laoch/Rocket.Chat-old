@@ -4,7 +4,7 @@ const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-type ldapTestSearchProps = {
+type LDAPTestSearchProps = {
 	username: string;
 };
 
@@ -19,7 +19,7 @@ const ldapTestSearchPropsSchema = {
 	additionalProperties: false,
 };
 
-export const isLdapTestSearch = ajv.compile<ldapTestSearchProps>(ldapTestSearchPropsSchema);
+export const isLdapTestSearch = ajv.compile<LDAPTestSearchProps>(ldapTestSearchPropsSchema);
 
 export type LDAPEndpoints = {
 	'/v1/ldap.testConnection': {
@@ -28,7 +28,7 @@ export type LDAPEndpoints = {
 		};
 	};
 	'/v1/ldap.testSearch': {
-		POST: (params: ldapTestSearchProps) => {
+		POST: (params: LDAPTestSearchProps) => {
 			message: string;
 		};
 	};

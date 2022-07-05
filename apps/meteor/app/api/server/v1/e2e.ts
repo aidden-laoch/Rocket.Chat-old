@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/camelcase */
 import { Meteor } from 'meteor/meteor';
 import {
 	ise2eGetUsersOfRoomWithoutKeyParamsGET,

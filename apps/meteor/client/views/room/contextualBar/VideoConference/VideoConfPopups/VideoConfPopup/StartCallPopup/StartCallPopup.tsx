@@ -9,7 +9,7 @@ import StartDirectCallPopup from './StartDirectCallPopup';
 import StartGroupCallPopup from './StartGroupCallPopup';
 import StartOmnichannelCallPopup from './StartOmnichannelCallPopup';
 
-type StartCallPopup = {
+type StartCallPopupProps = {
 	id: string;
 	room: IRoom;
 	onClose: () => void;
@@ -17,7 +17,7 @@ type StartCallPopup = {
 	loading: boolean;
 };
 
-const StartCallPopup = ({ loading, room, onClose, onConfirm }: StartCallPopup): ReactElement => {
+const StartCallPopup = ({ loading, room, onClose, onConfirm }: StartCallPopupProps): ReactElement => {
 	const ref = useRef<HTMLDivElement>(null);
 	const userId = useUserId();
 	const directUserId = room.uids?.filter((uid) => uid !== userId).shift();

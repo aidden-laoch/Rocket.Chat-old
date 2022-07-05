@@ -32,18 +32,16 @@
 	"overrides": [
 		{
 			"files": ["**/*.ts", "**/*.tsx"],
-			"extends": "../typescript",
 			"parser": "@typescript-eslint/parser",
 			"plugins": ["react", "react-hooks"],
 			"rules": {
 				"jsx-quotes": ["error", "prefer-single"],
 				"react/display-name": "error",
-				"react/jsx-uses-react": "error",
 				"react/jsx-uses-vars": "error",
 				"react/jsx-no-undef": "error",
 				"react/jsx-fragments": ["error", "syntax"],
 				"react/no-multi-comp": "error",
-				"react/react-in-jsx-scope": "error",
+				"react/react-in-jsx-scope": "off",
 				"react-hooks/rules-of-hooks": "error",
 				"react-hooks/exhaustive-deps": "warn"
 			},

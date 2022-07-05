@@ -5,7 +5,7 @@ const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-type licensesAddProps = {
+type LicensesAddProps = {
 	license: string;
 };
 
@@ -20,14 +20,14 @@ const licensesAddPropsSchema = {
 	additionalProperties: false,
 };
 
-export const isLicensesAddProps = ajv.compile<licensesAddProps>(licensesAddPropsSchema);
+export const isLicensesAddProps = ajv.compile<LicensesAddProps>(licensesAddPropsSchema);
 
 export type LicensesEndpoints = {
 	'/v1/licenses.get': {
 		GET: () => { licenses: Array<ILicense> };
 	};
 	'/v1/licenses.add': {
-		POST: (params: licensesAddProps) => void;
+		POST: (params: LicensesAddProps) => void;
 	};
 	'/v1/licenses.maxActiveUsers': {
 		GET: () => { maxActiveUsers: number | null; activeUsers: number };

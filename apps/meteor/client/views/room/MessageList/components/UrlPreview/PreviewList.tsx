@@ -34,6 +34,7 @@ export type PreviewMetadata = Partial<{
 	html?: string; // for embedded OembedType
 }>;
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type UrlPreview = {
 	type: 'image' | 'video' | 'audio';
 	originalType: string;

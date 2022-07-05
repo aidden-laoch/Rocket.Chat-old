@@ -15,13 +15,13 @@ const clampStyle = css`
 	-webkit-box-orient: vertical;
 `;
 
-type SettingsGroupCard = {
+type SettingsGroupCardProps = {
 	id: ISetting['_id'];
 	title: TranslationKey;
 	description?: TranslationKey;
 };
 
-const SettingsGroupCard = ({ id, title, description }: SettingsGroupCard): ReactElement => {
+const SettingsGroupCard = ({ id, title, description }: SettingsGroupCardProps): ReactElement => {
 	const t = useTranslation();
 	const router = useRoute('admin-settings');
 

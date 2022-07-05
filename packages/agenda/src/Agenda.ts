@@ -63,12 +63,15 @@ export class Agenda extends EventEmitter {
 
 	private _defaultLockLifetime: number;
 
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	private _db: MongoClient;
 
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	private _mdb: Db;
 
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
 	private _collection: Collection;
 
@@ -122,8 +125,10 @@ export class Agenda extends EventEmitter {
 
 		if (config.mongo) {
 			this.mongo(config.mongo, config.db ? config.db.collection : undefined, cb);
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-expect-error
 			if (config.mongo.s && config.mongo.topology && config.mongo.topology.s) {
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-expect-error
 				this._mongoUseUnifiedTopology = Boolean(config.mongo?.topology?.s?.options?.useUnifiedTopology);
 			}
@@ -600,6 +605,7 @@ export class Agenda extends EventEmitter {
 		debug('_findAndLockNextJob(%s, [Function])', jobName);
 
 		// Don't try and access MongoDB if we've lost connection to it.
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		const s = this._mdb.s || this._mdb.db.s;
 		if (s.topology.connections && s.topology.connections().length === 0 && !this._mongoUseUnifiedTopology) {

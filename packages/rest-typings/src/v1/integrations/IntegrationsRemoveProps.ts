@@ -4,6 +4,7 @@ const ajv = new Ajv();
 
 export type IntegrationsRemoveProps =
 	| { type: 'webhook-incoming'; integrationId: string }
+	// eslint-disable-next-line @typescript-eslint/naming-convention
 	| { type: 'webhook-outgoing'; integrationId?: string; target_url?: string };
 
 const integrationsRemoveSchema = {
@@ -31,7 +32,7 @@ const integrationsRemoveSchema = {
 					nullable: false,
 					pattern: 'webhook-outgoing',
 				},
-				// eslint-disable-next-line @typescript-eslint/camelcase
+				// eslint-disable-next-line @typescript-eslint/naming-convention
 				target_url: {
 					type: 'string',
 					nullable: false,

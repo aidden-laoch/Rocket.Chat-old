@@ -18,7 +18,6 @@ import type MaxChatsPerAgentDisplay from './MaxChatsPerAgentDisplay';
 import type PrioritiesSelect from './PrioritiesSelect';
 
 declare module '../../../../client/views/omnichannel/additionalForms' {
-	// eslint-disable-next-line @typescript-eslint/interface-name-prefix
 	interface EEFormHooks {
 		useCustomFieldsAdditionalForm: () => React.LazyExoticComponent<typeof CustomFieldsAdditionalFormContainer>;
 		useMaxChatsPerAgent?: () => React.LazyExoticComponent<typeof MaxChatsPerAgentContainer>;

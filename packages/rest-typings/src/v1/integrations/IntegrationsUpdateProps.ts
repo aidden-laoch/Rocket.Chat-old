@@ -19,6 +19,7 @@ export type IntegrationsUpdateProps =
 	| {
 			type: 'webhook-outgoing';
 			integrationId?: string;
+			// eslint-disable-next-line @typescript-eslint/naming-convention
 			target_url?: string;
 			username: string;
 			channel: string;
@@ -109,7 +110,7 @@ const integrationsUpdateSchema = {
 					type: 'string',
 					nullable: true,
 				},
-				// eslint-disable-next-line @typescript-eslint/camelcase
+				// eslint-disable-next-line @typescript-eslint/naming-convention
 				target_url: {
 					type: 'string',
 					nullable: true,

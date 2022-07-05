@@ -4,7 +4,7 @@ const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-export type e2eUpdateGroupKeyParamsPOST = {
+export type E2EUpdateGroupKeyParamsPOST = {
 	uid: string;
 	rid: string;
 	key: string;
@@ -27,4 +27,4 @@ const e2eUpdateGroupKeyParamsPOSTSchema = {
 	required: ['uid', 'rid', 'key'],
 };
 
-export const ise2eUpdateGroupKeyParamsPOST = ajv.compile<e2eUpdateGroupKeyParamsPOST>(e2eUpdateGroupKeyParamsPOSTSchema);
+export const ise2eUpdateGroupKeyParamsPOST = ajv.compile<E2EUpdateGroupKeyParamsPOST>(e2eUpdateGroupKeyParamsPOSTSchema);

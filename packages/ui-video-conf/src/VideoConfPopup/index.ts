@@ -10,14 +10,14 @@ import VideoConfPopupClose from './VideoConfPopupClose';
 import VideoConfPopupUsername from './VideoConfPopupUsername';
 
 export {
-  VideoConfPopup,
-  VideoConfPopupContent,
-  VideoConfPopupTitle,
-  VideoConfPopupBackdrop,
-  VideoConfPopupControllers,
-  VideoConfPopupIndicators,
-  VideoConfPopupClose,
-  VideoConfPopupUsername,
-  VideoConfPopupFooter,
-  VideoConfPopupFooterButtons,
-}
+	VideoConfPopup,
+	VideoConfPopupContent,
+	VideoConfPopupTitle,
+	VideoConfPopupBackdrop,
+	VideoConfPopupControllers,
+	VideoConfPopupIndicators,
+	VideoConfPopupClose,
+	VideoConfPopupUsername,
+	VideoConfPopupFooter,
+	VideoConfPopupFooterButtons,
+};

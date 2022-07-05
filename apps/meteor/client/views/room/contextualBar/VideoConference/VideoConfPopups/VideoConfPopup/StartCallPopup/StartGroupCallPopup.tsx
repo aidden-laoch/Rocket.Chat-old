@@ -21,14 +21,14 @@ import {
 	useVideoConfPreferences,
 } from '../../../../../../../contexts/VideoConfContext';
 
-type StartGroupCallPopup = {
+type StartGroupCallPopupProps = {
 	room: IRoom;
 	onConfirm: () => void;
 	loading?: boolean;
 };
 
 const StartGroupCallPopup = forwardRef(function StartGroupCallPopup(
-	{ room, onConfirm, loading }: StartGroupCallPopup,
+	{ room, onConfirm, loading }: StartGroupCallPopupProps,
 	ref: Ref<HTMLDivElement>,
 ): ReactElement {
 	const t = useTranslation();

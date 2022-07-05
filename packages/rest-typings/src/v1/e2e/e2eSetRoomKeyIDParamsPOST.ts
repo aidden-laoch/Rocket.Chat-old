@@ -4,7 +4,7 @@ const ajv = new Ajv({
 	coerceTypes: true,
 });
 
-export type e2eSetRoomKeyIDParamsPOST = {
+export type E2ESetRoomKeyIDParamsPOST = {
 	rid: string;
 	keyID: string;
 };
@@ -23,4 +23,4 @@ const e2eSetRoomKeyIDParamsPOSTSchema = {
 	required: ['rid', 'keyID'],
 };
 
-export const ise2eSetRoomKeyIDParamsPOST = ajv.compile<e2eSetRoomKeyIDParamsPOST>(e2eSetRoomKeyIDParamsPOSTSchema);
+export const ise2eSetRoomKeyIDParamsPOST = ajv.compile<E2ESetRoomKeyIDParamsPOST>(e2eSetRoomKeyIDParamsPOSTSchema);

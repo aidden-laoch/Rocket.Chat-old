@@ -1,0 +1,19 @@
+{
+  "extends": [
+    "@rocket.chat/eslint-config"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/ban-types": "warn",
+        "no-undef": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "**/dist"
+  ]
+}

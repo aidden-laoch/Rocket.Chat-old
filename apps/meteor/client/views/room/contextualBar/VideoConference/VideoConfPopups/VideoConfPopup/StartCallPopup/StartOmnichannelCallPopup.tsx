@@ -12,14 +12,14 @@ import React, { ReactElement, forwardRef, Ref } from 'react';
 
 import RoomAvatar from '../../../../../../../components/avatar/RoomAvatar';
 
-type StartOmnichannelCallPopup = {
+type StartOmnichannelCallPopupProps = {
 	room: IRoom;
 	onConfirm: () => void;
 	loading?: boolean;
 };
 
 const StartOmnichannelCallPopup = forwardRef(function StartOmnichannelCallPopup(
-	{ room, onConfirm, loading }: StartOmnichannelCallPopup,
+	{ room, onConfirm, loading }: StartOmnichannelCallPopupProps,
 	ref: Ref<HTMLDivElement>,
 ): ReactElement {
 	const t = useTranslation();

@@ -4,8 +4,8 @@ import React from 'react';
 
 const VideoConfPopupContent = ({ children }: { children: ReactNode }): ReactElement => (
 	<Box display='flex' flexDirection='column' alignItems='center'>
-    {children}
-  </Box>
+		{children}
+	</Box>
 );
 
 export default VideoConfPopupContent;
