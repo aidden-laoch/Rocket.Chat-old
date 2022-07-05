@@ -70,4 +70,8 @@ export class HomeFlextab {
 	get btnSetMemberOwner(): Locator {
 		return this.page.locator('//main//aside//button[contains(text(), "Set as owner")]');
 	}
+
+	get btnSetMemberModerator(): Locator {
+		return this.page.locator('[value="changeModerator"]');
+	}
 }

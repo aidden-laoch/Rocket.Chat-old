@@ -10,6 +10,7 @@ test.describe('Channel Management', () => {
 
 	let anyChannel: string;
 	let anyUser: string;
+	let newChannelName: string;
 
 	test.beforeAll(async ({ browser }) => {
 		page = await browser.newPage();
@@ -18,6 +19,7 @@ test.describe('Channel Management', () => {
 
 		anyChannel = faker.animal.type() + Date.now();
 		anyUser = 'rocket.cat';
+		newChannelName = `NAMEEDITED${Date.now()}`;
 	});
 
 	test.beforeAll(async () => {
@@ -51,14 +53,18 @@ test.describe('Channel Management', () => {
 		await expect(page).toHaveURL(`/channel/${anyChannel}/channel-settings`);
 	});
 
-	test('expect update "anyChannel" name to "newName"', async () => {
-		const newName = 'NAME EDITED';
+	test.describe('Update room name', () => {
+		test.afterAll(async () => {
+			await pageHomeChannel.tabs.btnChannelInfo.click();
+			await pageHomeChannel.tabs.btnChannelInfoEdit.click();
+		});
+		test('expect update "anyChannel" name to "newName"', async () => {
+			await pageHomeChannel.tabs.inputChannelName.fill(newChannelName);
+			await pageHomeChannel.tabs.btnEditSave.click();
+			await pageHomeChannel.sidebar.doOpenChat(newChannelName);
 
-		await pageHomeChannel.tabs.inputChannelName.type(newName);
-		await pageHomeChannel.tabs.btnEditSave.click();
-		await pageHomeChannel.sidebar.doOpenChat(newName);
-
-		await expect(page).toHaveURL(`/channel/${anyChannel}`);
+			await expect(page).toHaveURL(`/channel/${newChannelName}`);
+		});
 	});
 
 	test('expect update "anyChannel" announcement to "newAnnouncement"', async () => {
@@ -83,7 +89,7 @@ test.describe('Channel Management', () => {
 		await pageHomeChannel.tabs.btnMembers.click();
 		await pageHomeChannel.tabs.getMember(anyUser).click();
 
-		await expect(page).toHaveURL(`/channel/${anyChannel}/members-list`);
+		await expect(page).toHaveURL(`/channel/${newChannelName}/members-list`);
 	});
 
 	test('expect mute "anyUser"', async () => {
@@ -103,6 +109,13 @@ test.describe('Channel Management', () => {
 
 	test('expect set "anyUser" as owner', async () => {
 		await pageHomeChannel.tabs.btnSetMemberOwner.click();
+
+		await expect(pageHomeChannel.content.getSystemMessage(anyUser)).toBeVisible();
+	});
+
+	test('expect set "anyUser" as moderator', async () => {
+		await pageHomeChannel.tabs.memberInfoMenu.click();
+		await pageHomeChannel.tabs.btnSetMemberModerator.click();
 
 		await expect(pageHomeChannel.content.getSystemMessage(anyUser)).toBeVisible();
 	});
