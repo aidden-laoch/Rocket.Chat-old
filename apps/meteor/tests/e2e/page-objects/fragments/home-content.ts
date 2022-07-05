@@ -15,6 +15,14 @@ export class HomeContent {
 		return this.page.locator('[data-qa-id=UserMessage]:not(.sequential)').last();
 	}
 
+	getUserMessage(name: string): Locator {
+		return this.page.locator(`[data-username="${name}"][data-qa-type="username"]`).last();
+	}
+
+	getUserFigure(name: string): Locator {
+		return this.page.locator(`figure[data-username="${name}"]`).last();
+	}
+
 	get inputMessage(): Locator {
 		return this.page.locator('[name="msg"]');
 	}

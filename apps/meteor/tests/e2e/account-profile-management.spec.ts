@@ -29,8 +29,8 @@ test.describe('Profile Management', () => {
 	test('expect update profile with new name and username', async () => {
 		await pageHomeChannel.sidebar.doOpenProfile();
 
-		await pageAccountProfile.inputName.type(newName);
-		await pageAccountProfile.inputUsername.type(newUsername);
+		await pageAccountProfile.inputName.fill(newName);
+		await pageAccountProfile.inputUsername.fill(newUsername);
 		await pageAccountProfile.btnSubmit.click();
 	});
 
@@ -41,11 +41,11 @@ test.describe('Profile Management', () => {
 	});
 
 	test('expect show new username in the last message', async () => {
-		await expect(pageHomeChannel.content.lastUserMessageNotSequential).toContainText(newUsername);
+		await expect(pageHomeChannel.content.getUserMessage(newUsername)).toContainText(newUsername);
 	});
 
 	test('expect show new username in card and profile', async () => {
-		await pageHomeChannel.content.lastUserMessageNotSequential.locator('button').click();
+		await pageHomeChannel.content.getUserFigure(newUsername).click();
 		await pageHomeChannel.content.btnFullProfile.click();
 
 		await expect(pageHomeChannel.tabs.userInfoUsername).toHaveText(newUsername);

@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 
 import { HomeChannel, Auth } from './page-objects';
 
-test.describe.only('Channel Management', () => {
+test.describe('Channel Management', () => {
 	let page: Page;
 	let pageAuth: Auth;
 	let pageHomeChannel: HomeChannel;
