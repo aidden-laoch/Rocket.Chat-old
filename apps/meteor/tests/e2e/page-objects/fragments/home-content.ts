@@ -41,6 +41,10 @@ export class HomeContent {
 		return this.page.locator('[data-qa="UserCard"] a');
 	}
 
+	get btnStarMessage(): Locator {
+		return this.page.locator('[data-qa-id="star-message"]');
+	}
+
 	getSystemMessage(text: string): Locator {
 		return this.page.locator(`[data-qa-type="system-message-body"] >> text="${text}"`).last();
 	}
@@ -67,5 +71,11 @@ export class HomeContent {
 			'drop',
 			{ dataTransfer },
 		);
+	}
+
+	async doMessageActionMenu(): Promise<void> {
+		await this.page.locator('.messages-box [data-qa-type="message"]:last-child').hover();
+		await this.page.locator('.messages-box [data-qa-type="message"]:last-child [data-qa-id="menu"]').waitFor();
+		await this.page.locator('.messages-box [data-qa-type="message"]:last-child [data-qa-id="menu"]').click();
 	}
 }

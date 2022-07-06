@@ -73,4 +73,10 @@ test.describe('Messaging', () => {
 		await pageHomeChannel.btnModalConfirm.click();
 		await expect(pageHomeChannel2.content.lastUserMessage).toBeVisible();
 	});
+
+	test('expect message is starred', async () => {
+		await pageHomeChannel.content.doSendMessage('TEST_MESSAGE');
+		await pageHomeChannel.content.doMessageActionMenu();
+		await pageHomeChannel.content.btnStarMessage.click();
+	});
 });
