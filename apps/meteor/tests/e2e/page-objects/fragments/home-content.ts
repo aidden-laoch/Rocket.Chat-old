@@ -1,3 +1,5 @@
+import fs from 'fs';
+
 import { Page, Locator } from '@playwright/test';
 
 export class HomeContent {
@@ -8,7 +10,7 @@ export class HomeContent {
 	}
 
 	get lastUserMessage(): Locator {
-		return this.page.locator('[data-qa-id=UserMessage]').last();
+		return this.page.locator('[data-own="false"][data-qa-type="message"]').last();
 	}
 
 	get lastUserMessageNotSequential(): Locator {
@@ -46,5 +48,24 @@ export class HomeContent {
 	async doSendMessage(text: string): Promise<void> {
 		await this.inputMessage.type(text);
 		await this.page.keyboard.press('Enter');
+	}
+
+	async doDropFileInChat(): Promise<void> {
+		const contract = await fs.promises.readFile('./tests/e2e/fixtures/any_file.txt', 'utf-8');
+
+		const dataTransfer = await this.page.evaluateHandle((contract) => {
+			const data = new DataTransfer();
+			const file = new File([`${contract}`], 'any_file.txt', {
+				type: 'text/plain',
+			});
+			data.items.add(file);
+			return data;
+		}, contract);
+
+		await this.page.dispatchEvent(
+			'div.dropzone-overlay.dropzone-overlay--enabled.background-transparent-darkest.color-content-background-color',
+			'drop',
+			{ dataTransfer },
+		);
 	}
 }

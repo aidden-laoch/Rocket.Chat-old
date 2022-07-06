@@ -22,4 +22,16 @@ export class HomeChannel {
 	get btnModalCancel(): Locator {
 		return this.page.locator('#modal-root .rcx-button--danger.rcx-button');
 	}
+
+	get btnModalConfirm(): Locator {
+		return this.page.locator('#modal-root .rcx-button--primary.rcx-button');
+	}
+
+	get inputFileDescription(): Locator {
+		return this.page.locator('#modal-root [placeholder="Description"]');
+	}
+
+	get inputFileName(): Locator {
+		return this.page.locator('#modal-root [value="any_file.txt"]');
+	}
 }
